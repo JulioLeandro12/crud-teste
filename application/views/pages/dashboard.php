@@ -33,8 +33,8 @@
 						<td><?= $game['developer'] ?></td>
 						<td><?= $game['release_date'] ?></td>
 						<td>
-							<a href=" <?php base_url() ?>games/edit<?= $game['id'] ?>" class="btn btn-sm btn-outline-warning"><i class="fas fa-edit"></i></a>
-                            <a href="" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></a>
+							<a href=" <?php base_url() ?>games/edit/<?= $game['id'] ?>" class="btn btn-sm btn-outline-warning"><i class="fas fa-edit"></i></a>
+                            <a href="javascript:goDelete(<?= $game['id'] ?>)" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></a>
                             <a href="" class="btn btn-sm"></a>
 							<br>
 							<?php endforeach;?>
@@ -62,4 +62,14 @@
 		</table>
 	</div>
 </main>
+
+<script>
+
+function goDelete(id) {
+		if (confirm('Tem certeza que deseja apagar o jogo<?= $game['name'] ?>?')) {
+			window.location.href = '<?= base_url() ?>games/delete/' + id;
+		}
+	}
+
+</script>
 
