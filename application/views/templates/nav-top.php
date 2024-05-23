@@ -1,5 +1,12 @@
+<?php
+$logged_user = $this->session->userdata('logged_user');
+?>
+
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
   <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Games 4 Devs</a>
+  <div>
+    <h3 style="font-family: Arial, Helvetica, sans-serif; color: white; ">Bem-Vindo, <?= $logged_user['name'] ?>!</h3>
+  </div>
 	<div>
 		<form action="" method="post">
 			<input class="form-control form-control-dark" type="text" name="busca" id="busca" placeholder="Search" aria-label="Search" value="">
